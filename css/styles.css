@@ -1,5 +1,7 @@
+/*--------------------------- COLOR VARIABLES --------------------------------------*/
 :root {
-    --g-blue: #4285F4;
+    --g-blue: rgb(66, 133, 244);
+    --g-blue2: rgba(66, 133, 244, 0.9);
     --g-green: #0F9D58;
     --g-yellow: #F4B400;
     --g-red: #DB4437;
@@ -7,12 +9,13 @@
     --g-darkgrey: #3c4043;
   }
 
+
+/*--------------------------- GENERAL SETTINGS --------------------------------------*/
 body{
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
     color:  var(--g-darkgrey);
 }
-
 h1{
     font-size: 60px;
 }
@@ -25,54 +28,69 @@ h3{
 h4{
     font-size: 30px;
 }
-
 a{
     text-decoration: none;
     color:  var(--g-darkgrey);
 }
+a:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;      
+}
 
+
+/*--------------------------- TOP SECTION --------------------------------------*/
 .top-bar{
     font-size: 14px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 15px; 
+    align-items: center;
+    padding: 10px 20px;
 }
-
-.top-bar div ul li{
-    display: inline-block;
+.top-bar div ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-
 .left-side ul li{
     margin: 0 10px;
+    display: flex;
+    align-items: center;
 }
-
 .right-side ul li{
     margin: 0 10px;
     font-size: 12px;
+    display: flex;
 }
-
-.fa-th{
+.apps{
     font-size: 20px;
-
+    border-radius: 100px;
+    padding: 10px;
 }
-
-
+.apps:hover{
+    background-color: var(--g-lightgrey);
+}
 .evi{
     color: white;
     background-color: var(--g-blue);
     padding: 10px 25px;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 14px;
+}
+a.evi:hover{
+    text-decoration: none;
+    background-color: var(--g-blue2);
 }
 
-.container{
-    width: 100%;
-    height: 100vh;
-    border: 1px solid fuchsia;
-    display: flex;
-    flex-direction: column;      
-}
+
+/*--------------------------- CENTER SECTION: LOGO + FORM --------------------------------------*/
 .center-element{
     height: 80%;
     width: 100%;
@@ -90,24 +108,20 @@ a{
     width: 100%;
     margin: -150px auto 0;        
 }
-
 .google-logo{
-    width: 250px;
+    width: 280px;
     margin: -0 0 30px 0;
 }
-
 .form-section{
     display: block;
     width: 100%;
 }
-
 .search-form{
     width: auto;
     max-width: 600px;
     position: relative;
     margin: 0 auto;
 }
-
 .search-border{
     border:1px solid #dfe1e5;
     border-radius: 25px;
@@ -118,40 +132,74 @@ a{
     width: auto;
     max-width: 700px;
 }
-
+.search-border:hover{
+    box-shadow: 0px 2px 10px #dfe1e5;
+}
 .fa-search{
     color: #9aa0a6;
     margin-right: 20px;
 }
-
 .search-bar{
     width: 100%;
     border: none;
     box-shadow: none;
-    font-size: 16px;
+    font-size: 14px;
+    color: lightslategray;
+    text-align: center;
 }
-
 .search-buttons{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 50px auto;
+    margin: 30px auto;
 }
-
 .submit-button{
     padding: 10px 20px;
     border: none;
-    margin: 0 10px;
+    margin: 0 5px;
     border-radius: 5px;
     background-color: var(--g-lightgrey);
     cursor: pointer;
     color: var(--g-darkgrey);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    border: 1px solid white;
+}
+.submit-button:hover{
+    box-sizing: border-box;
+    border: 1px solid #dfe1e5;
+    box-shadow: 0px 1px 1px #dfe1e5;
 }
 
+
+/*--------------------------- FOOTER SECTION --------------------------------------*/
 footer{
     background-color: var(--g-lightgrey);
     color: var(--g-darkgrey);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 14px;
+}
+footer ul li{
+    margin: 0 15px;
+}
+.country{
+    border-bottom: 1px solid #dfe1e5;
+    padding: 20px 30px;
+    color: gray;
+}
+.bottom-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px;
+}
+.bottom-footer ul li a{
+    color: gray;
+}
+.footer-left,
+.footer-right{
+    display: flex;
+    justify-content: center;
 }
